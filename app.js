@@ -13,6 +13,8 @@ connection.once('open', () => {
 })
 
 // Commands
+client.commandList = new Discord.Collection()
+require('./utils/commandManager')(client.commandList)
 
 // Event manager
 require('./utils/eventManager')(client);
