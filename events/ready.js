@@ -2,8 +2,7 @@ const Guild = require('../models/guild.model')
 
 module.exports = (client) => {
   Array.from(client.guilds.cache.keys()).forEach( (el) => {
-    let guild = client.guilds.cache.get(el)
-    console.log(guild)
+    let guild = client.guilds.cache.get(el);
 
     Guild.findOneAndUpdate({ guildID: guild.id },
       { $setOnInsert: {
